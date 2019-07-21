@@ -18,10 +18,10 @@ public class Aportantes {
     private final SimpleStringProperty tipo;
 
     public Aportantes(String nombre, String apellido, String dinero, String tipo) {
-        this.nombre = new SimpleStringProperty();
-        this.apellido = new SimpleStringProperty();
-        this.dinero = new SimpleStringProperty();
-        this.tipo = new SimpleStringProperty();
+        this.nombre = new SimpleStringProperty(nombre);
+        this.apellido = new SimpleStringProperty(apellido);
+        this.dinero = new SimpleStringProperty(dinero);
+        this.tipo = new SimpleStringProperty(tipo);
     }
 
     public String getNombre() {

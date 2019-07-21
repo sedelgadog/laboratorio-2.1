@@ -41,7 +41,6 @@ public class Controlador1 {
       implements EventHandler<ActionEvent>{
        @Override
         public void handle(ActionEvent event) {
-            System.out.println("xsdxdx");
            Singleton singleton=
                    Singleton.getSingleton();
            Stage stage = singleton.getStage();
@@ -60,8 +59,8 @@ public class Controlador1 {
            Singleton singleton=
                    Singleton.getSingleton();
            Stage stage = singleton.getStage();
-           ControladorAportante controlador = new 
-                ControladorAportante();
+           ControladorPreAportante controlador = new 
+                ControladorPreAportante();
            Scene escena =
                    controlador.getVista().getScene();
            stage.setTitle("Escena 1");
