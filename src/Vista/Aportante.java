@@ -5,6 +5,7 @@
  */
 package Vista;
 
+import Modelo.AdminitradorDatos;
 import Modelo.Aportantes;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -67,12 +68,7 @@ public class Aportante implements Vista{
         Button button1=new Button();
         Button button2=new Button();
         //ObservableList
-        final ObservableList<Aportantes> data=FXCollections.observableArrayList(
-        new Aportantes("Gabriel","Riascos","Descubrimiento cientifico","1.000.00"),
-        new Aportantes("Julio","Ojeda","Nueva Marca","800.000"),
-        new Aportantes("Sebastian","Delgado","Produccion en masa","600.000"),
-        new Aportantes("Nicolas","Jarro","Descubrimiento cientifico","400.00")
-        );
+        AdminitradorDatos datos =new AdminitradorDatos();
         //Tabla
         TableView table = new TableView();
         table.setEditable(true);
@@ -88,7 +84,7 @@ public class Aportante implements Vista{
         apellido.setCellValueFactory(new PropertyValueFactory<Aportantes,String>("apellido"));
         tipo.setCellValueFactory(new PropertyValueFactory<Aportantes,String>("dinero"));
         dineroActual.setCellValueFactory(new PropertyValueFactory<Aportantes,String>("tipo"));
-        table.setItems(data);
+        table.setItems(datos.data);
         //Menu
         Menu menu = new Menu("Opciones");
         this.menuItem1 = new
