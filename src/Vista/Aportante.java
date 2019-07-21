@@ -68,7 +68,7 @@ public class Aportante implements Vista{
         Button button1=new Button();
         Button button2=new Button();
         //ObservableList
-        AdminitradorDatos datos =new AdminitradorDatos();
+        AdminitradorDatos datos =AdminitradorDatos.getAdministradorDatos();
         //Tabla
         TableView table = new TableView();
         table.setEditable(true);
