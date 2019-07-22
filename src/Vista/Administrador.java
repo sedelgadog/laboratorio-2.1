@@ -12,6 +12,7 @@ import javafx.scene.control.MenuBar;
 import javafx.scene.control.MenuItem;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
+import javafx.scene.text.Font;
 
 /**
  *
@@ -37,6 +38,9 @@ public class Administrador implements Vista {
         menu.getItems().add(menuItem3);
         MenuBar menuBar = new MenuBar();
         menuBar.getMenus().add(menu);
+        Label subastas =new Label("SUBASTAS POO");
+        subastas.setFont(new Font("Arial", 60));
+        Pane.setCenter(subastas);
         Pane.setTop(menuBar);
         this.escena = new Scene(Pane, 1000, 650);
     }

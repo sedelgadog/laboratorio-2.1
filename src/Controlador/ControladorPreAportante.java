@@ -5,7 +5,12 @@
  */
 package Controlador;
 
+import Modelo.Aportantes;
+import Modelo.DatosAportantes;
 import Vista.PreAportante;
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.Scene;
@@ -37,6 +42,14 @@ private class Evento
             String nombre=vista.getNombret().getText();
             String apellido=vista.getApellidot().getText();
             String tarjeta=vista.getNumerot().getText();
+            Aportantes a =new Aportantes(nombre,apellido,tarjeta);
+            DatosAportantes datos=DatosAportantes.getDatosAportantes();
+            datos.aportantes.add(a);
+           try {
+               datos.imprimir();
+           } catch (IOException ex) {
+               System.out.println("Interrumped");
+           }
            Singleton singleton=
                    Singleton.getSingleton();
            Stage stage = singleton.getStage();
