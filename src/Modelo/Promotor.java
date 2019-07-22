@@ -22,6 +22,7 @@ public class Promotor {
         this.apellido = new SimpleStringProperty(apellido);
         this.dinero = new SimpleStringProperty(dinero);
         this.tipo = new SimpleStringProperty(tipo);
+       
     }
      public String getNombre() {
         return nombre.get();

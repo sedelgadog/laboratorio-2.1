@@ -10,8 +10,10 @@ package Controlador;
  * @author mapii
  */
 import Modelo.AdminitradorDatos;
+import Modelo.DatosPromotor;
 import Modelo.Promotor;
 import Vista.PrePromotor;
+import java.io.IOException;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.Scene;
@@ -42,8 +44,13 @@ private class Evento
             String iniciativa=vista.gettxtIniciativa().getText();
             String presupuesto=vista.getTxtPresupuesto().getText();
             Promotor promotor=new Promotor(nombre,apellido,presupuesto,iniciativa);
-            AdminitradorDatos datos=AdminitradorDatos.getAdministradorDatos();
-            datos.data.add(promotor);
+            DatosPromotor datos=DatosPromotor.getDatosPromotor();
+            datos.promotores.add(promotor);
+             try {
+               datos.imprimir();
+           } catch (IOException ex) {
+               System.out.println("Interrumped");
+           }
            Singleton singleton=
                    Singleton.getSingleton();
            Stage stage = singleton.getStage();
