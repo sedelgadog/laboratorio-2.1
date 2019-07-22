@@ -80,10 +80,10 @@ public class Aportante implements Vista{
         tipo.setMinWidth(200);
         TableColumn dineroActual = new TableColumn("Dinero Actual");
         dineroActual.setMinWidth(100);
-         nombre.setCellValueFactory(new PropertyValueFactory<Aportantes,String>("nombre"));
-        apellido.setCellValueFactory(new PropertyValueFactory<Aportantes,String>("apellido"));
-        tipo.setCellValueFactory(new PropertyValueFactory<Aportantes,String>("dinero"));
-        dineroActual.setCellValueFactory(new PropertyValueFactory<Aportantes,String>("tipo"));
+         nombre.setCellValueFactory(new PropertyValueFactory<Promotor,String>("nombre"));
+        apellido.setCellValueFactory(new PropertyValueFactory<Promotor,String>("apellido"));
+        tipo.setCellValueFactory(new PropertyValueFactory<Promotor,String>("dinero"));
+        dineroActual.setCellValueFactory(new PropertyValueFactory<Promotor,String>("tipo"));
         table.setItems(datos.data);
         //Menu
         Menu menu = new Menu("Opciones");
