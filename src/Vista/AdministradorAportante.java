@@ -6,26 +6,25 @@
 package Vista;
 
 import javafx.scene.Scene;
-import javafx.scene.control.Label;
 import javafx.scene.control.Menu;
 import javafx.scene.control.MenuBar;
 import javafx.scene.control.MenuItem;
 import javafx.scene.layout.BorderPane;
-import javafx.scene.layout.GridPane;
 
 /**
  *
  * @author mapii
  */
-public class Administrador implements Vista {
-    private Scene escena;
-    private  MenuItem menuItem2;
+public class AdministradorAportante implements Vista {
+private Scene escena;
+private  MenuItem menuItem2;
     private MenuItem menuItem1;
     private MenuItem menuItem3;
-    public Administrador() {
+
+    public AdministradorAportante() {
         BorderPane Pane = new BorderPane();
         //Menu
-        Menu menu = new Menu("Opciones");
+        Menu menu = new Menu("Promotor");
         this.menuItem1 = new
         MenuItem("Gestion promotores");
         this.menuItem2 = new
@@ -41,36 +40,10 @@ public class Administrador implements Vista {
         this.escena = new Scene(Pane, 1000, 650);
     }
 
-    public MenuItem getMenuItem2() {
-        return menuItem2;
-    }
-
-    public void setMenuItem2(MenuItem menuItem2) {
-        this.menuItem2 = menuItem2;
-    }
-
-    public MenuItem getMenuItem1() {
-        return menuItem1;
-    }
-
-    public void setMenuItem1(MenuItem menuItem1) {
-        this.menuItem1 = menuItem1;
-    }
-
-    public MenuItem getMenuItem3() {
-        return menuItem3;
-    }
-
-    public void setMenuItem3(MenuItem menuItem3) {
-        this.menuItem3 = menuItem3;
-    }
 
     @Override
     public Scene getScene() {
-        return this.escena; 
-    }
+         return this.escena; 
     }
     
-   
-    
-
+}

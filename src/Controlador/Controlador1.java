@@ -44,8 +44,8 @@ public class Controlador1 {
            Singleton singleton=
                    Singleton.getSingleton();
            Stage stage = singleton.getStage();
-           ControladorPromotor controlador = new 
-                ControladorPromotor();
+           ControladorPrePromotor controlador = new 
+                ControladorPrePromotor();
            Scene escena =
                    controlador.getVista().getScene();
            stage.setTitle("Escena 1");

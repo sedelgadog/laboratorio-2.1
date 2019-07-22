@@ -5,7 +5,13 @@
  */
 package Controlador;
 
+
+import Vista.PrePromotor;
 import Vista.Promotor;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
+import javafx.scene.Scene;
+import javafx.stage.Stage;
 
 /**
  *
@@ -13,6 +19,12 @@ import Vista.Promotor;
  */
 public class ControladorPromotor {
     private Promotor vista;
+    ControladorPromotor() {
+        this.vista = new Promotor();
+        this.vista.getMenuItem1().setOnAction(new Evento2());
+        this.vista.getMenuItem2().setOnAction(new Evento());
+    }
+
 
     public Promotor getVista() {
         return vista;
@@ -24,9 +36,40 @@ public class ControladorPromotor {
     public Promotor getEscena() {
         return vista;
     }
-    public ControladorPromotor() {
-        this.vista = 
-              new Promotor();
+
+    
+    
+    private class Evento 
+      implements EventHandler<ActionEvent>{
+       @Override
+        public void handle(ActionEvent event) {
+           Singleton singleton=
+                   Singleton.getSingleton();
+           Stage stage = singleton.getStage();
+           Controlador1 controlador = new 
+                Controlador1();
+           Scene escena =
+                   controlador.getVista().getScene();
+           stage.setTitle("Escena 1");
+           stage.setScene(escena);
+        }
+        
     }
+    private class Evento2 
+      implements EventHandler<ActionEvent>{
+       @Override
+        public void handle(ActionEvent event) {
+           Singleton singleton=
+                   Singleton.getSingleton();
+           Stage stage = singleton.getStage();
+           ControladorPreAportante controlador = new 
+                ControladorPreAportante();
+           Scene escena =
+                   controlador.getVista().getScene();
+           stage.setTitle("Escena 1");
+           stage.setScene(escena);
+        }
+    }
+    
     
 }

@@ -15,11 +15,11 @@ import javafx.collections.ObservableList;
 public class AdminitradorDatos {
     private static AdminitradorDatos 
                      administradorDatos;
-    public ObservableList<Aportantes> data=FXCollections.observableArrayList(
-        new Aportantes("Gabriel","Riascos","Descubrimiento cientifico","1.000.00"),
-        new Aportantes("Julio","Ojeda","Nueva Marca","800.000"),
-        new Aportantes("Sebastian","Delgado","Produccion en masa","600.000"),
-        new Aportantes("Nicolas","Jarro","Descubrimiento cientifico","400.00")
+    public ObservableList<Promotor> data=FXCollections.observableArrayList(
+        new Promotor("Gabriel","Riascos","Descubrimiento cientifico","1.000.00"),
+        new Promotor("Julio","Ojeda","Nueva Marca","800.000"),
+        new Promotor("Sebastian","Delgado","Produccion en masa","600.000"),
+        new Promotor("Nicolas","Jarro","Descubrimiento cientifico","400.00")
         );
     public static AdminitradorDatos getAdministradorDatos(){
       if (administradorDatos == null)

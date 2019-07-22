@@ -6,6 +6,10 @@
 package Controlador;
 
 import Vista.Administrador;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
+import javafx.scene.Scene;
+import javafx.stage.Stage;
 
 /**
  *
@@ -25,7 +29,57 @@ public class ControladorAdministrador {
     public ControladorAdministrador() {
         this.vista = 
               new Administrador();
+        this.vista.getMenuItem1().setOnAction(new Evento());
+        this.vista.getMenuItem2().setOnAction(new Evento2());
+        this.vista.getMenuItem3().setOnAction(new Evento3());
     }
     
-    
+    private class Evento 
+      implements EventHandler<ActionEvent>{
+       @Override
+        public void handle(ActionEvent event) {
+           Singleton singleton=
+                   Singleton.getSingleton();
+           Stage stage = singleton.getStage();
+           ControladorAdmPromotor controlador = new 
+                ControladorAdmPromotor();
+           Scene escena =
+                   controlador.getVista().getScene();
+           stage.setTitle("Escena 1");
+           stage.setScene(escena);
+        }
+        
+    }
+     private class Evento2
+      implements EventHandler<ActionEvent>{
+       @Override
+        public void handle(ActionEvent event) {
+           Singleton singleton=
+                   Singleton.getSingleton();
+           Stage stage = singleton.getStage();
+           ControladorAdmAportante controlador = new 
+                ControladorAdmAportante();
+           Scene escena =
+                   controlador.getVista().getScene();
+           stage.setTitle("Escena 1");
+           stage.setScene(escena);
+        }
+        
+    }
+      private class Evento3 
+      implements EventHandler<ActionEvent>{
+       @Override
+        public void handle(ActionEvent event) {
+           Singleton singleton=
+                   Singleton.getSingleton();
+           Stage stage = singleton.getStage();
+           Controlador1 controlador = new 
+                Controlador1();
+           Scene escena =
+                   controlador.getVista().getScene();
+           stage.setTitle("Escena 1");
+           stage.setScene(escena);
+        }
+        
+    }
 }
