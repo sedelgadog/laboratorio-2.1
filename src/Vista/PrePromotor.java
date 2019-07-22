@@ -81,6 +81,14 @@ public class PrePromotor implements Vista{
         this.B1 = B1;
     }
 
+    public TextField getTxtPresupuesto() {
+        return txtPresupuesto;
+    }
+
+    public void setTxtPresupuesto(TextField txtPresupuesto) {
+        this.txtPresupuesto = txtPresupuesto;
+    }
+
 
     public PrePromotor() {
         GridPane Pane = new GridPane();

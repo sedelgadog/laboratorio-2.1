@@ -9,6 +9,8 @@ package Controlador;
  *
  * @author mapii
  */
+import Modelo.AdminitradorDatos;
+import Modelo.Promotor;
 import Vista.PrePromotor;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -34,11 +36,19 @@ private class Evento
       implements EventHandler<ActionEvent>{
        @Override
         public void handle(ActionEvent event) {
+            String nombre=vista.gettxtNombre().getText();
+            String apellido=vista.gettxtApellido().getText();
+            String correo=vista.gettxtCorreo().getText();
+            String iniciativa=vista.gettxtIniciativa().getText();
+            String presupuesto=vista.getTxtPresupuesto().getText();
+            Promotor promotor=new Promotor(nombre,apellido,presupuesto,iniciativa);
+            AdminitradorDatos datos=AdminitradorDatos.getAdministradorDatos();
+            datos.data.add(promotor);
            Singleton singleton=
                    Singleton.getSingleton();
            Stage stage = singleton.getStage();
            ControladorPromotor controlador = new 
-                ControladorPromotor();
+                ControladorPromotor(nombre,apellido,correo,iniciativa,presupuesto);
            Scene escena =
                    controlador.getVista().getScene();
            stage.setTitle("Escena 1");

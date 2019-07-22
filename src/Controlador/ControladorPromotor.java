@@ -19,8 +19,8 @@ import javafx.stage.Stage;
  */
 public class ControladorPromotor {
     private Promotor vista;
-    ControladorPromotor() {
-        this.vista = new Promotor();
+    ControladorPromotor(String n, String a,String c,String i,String p) {
+        this.vista = new Promotor(n,a,c,i,p);
         this.vista.getMenuItem1().setOnAction(new Evento2());
         this.vista.getMenuItem2().setOnAction(new Evento());
     }

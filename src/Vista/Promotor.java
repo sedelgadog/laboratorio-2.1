@@ -28,7 +28,7 @@ public class Promotor implements Vista {
     private MenuItem menuItem1;
 
 
-    public Promotor(){
+    public Promotor(String n, String a,String c,String i,String p){
     
         Separator separator1 = new Separator();
         Separator separator2 = new Separator();
@@ -45,19 +45,19 @@ public class Promotor implements Vista {
         datosp.setFont(new Font("Arial", 40));
         Label nombrel =new Label("Nombre:");
         nombrel.setFont(new Font("Arial", 20));
-//        Text text1 = new Text();
-//        text1.setFont(new Font(20));
-//        text1.setText(a);
+        Text text1 = new Text();
+        text1.setFont(new Font(20));
+        text1.setText(n);
         Label apellidol =new Label("Apellido");
         apellidol.setFont(new Font("Arial", 20));
-//        Text text2 = new Text();
-//        text2.setFont(new Font(20));
-//        text2.setText(a);
+        Text text2 = new Text();
+        text2.setFont(new Font(20));
+        text2.setText(a);
         Label tarjetal =new Label("Correo:");
         tarjetal.setFont(new Font("Arial", 20));
-//        Text text3 = new Text();
-//        text3.setFont(new Font(20));
-//        text3.setText(c);
+        Text text3 = new Text();
+        text3.setFont(new Font(20));
+        text3.setText(c);
         
         Button button1=new Button();
         Button button2=new Button();
@@ -91,7 +91,7 @@ public class Promotor implements Vista {
         menuBar.getMenus().add(menu);
         //Agregacion
         table.getColumns().addAll(nombre, apellido,tipo,dineroActual);
-        vbox.getChildren().addAll(datosp,separator1,nombrel,separator2,apellidol,separator3,tarjetal,separator4);
+        vbox.getChildren().addAll(datosp,separator1,nombrel,text1,separator2,apellidol,text2,separator3,tarjetal,text3,separator4);
         vbox2.getChildren().add(subastas);
         vbox2.getChildren().add(table);
         Pane.setCenter(vbox2);
